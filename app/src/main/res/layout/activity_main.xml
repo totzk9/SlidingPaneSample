@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.slidingpanelayout.widget.SlidingPaneLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootSlidingLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="304dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/slidingpane_borders"
+        android:minWidth="100dp"
+        android:fillViewport="true">
+        <!-- you can add background android:background="@drawable/slidingpane_borders" -->
+        <!-- specify width, you can have smaller or bigger depending if you want to overlap the 2nd view." -->
+
+<!--        You can add any View here-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="318dp"
+                android:text="Button 1"
+                app:layout_constraintBottom_toTopOf="@+id/button2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button 2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:elevation="6dp"
+            android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar" >
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsingToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:contentScrim="@color/colorPrimary"
+                app:expandedTitleGravity="center"
+                app:layout_scrollFlags="exitUntilCollapsed|scroll"
+                app:title="Home" >
+
+                <TextView
+                    android:id="@+id/txtCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="52dp"
+                    android:gravity="center"
+                    android:text="Any text inside toolbar"
+                    android:textColor="#ffffff" />
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/Theme.MaterialComponents.Light" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ANY VIEW CAN BE ADDED HERE"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btnOpenPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:text="Open Panel" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.slidingpanelayout.widget.SlidingPaneLayout>
