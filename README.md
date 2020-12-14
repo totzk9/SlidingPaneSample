@@ -1,2 +1,2 @@
 # SlidingPaneSample
-A sample app project to showcase the SlidingPaneLayout.
+A personal sample app project to showcase the SlidingPaneLayout.
